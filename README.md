@@ -1,66 +1,89 @@
 # StageHand Starter Kit
 
-A beginner-friendly starter kit for connecting TouchDesigner with MCP (Model Context Protocol) tools and voice-controlled workflows.
+**A beginner-friendly guide to voice-controlled visual workflows using TouchDesigner and the Model Context Protocol (MCP).**
 
-## About
+StageHand explores how spoken commands can be translated into tool calls that control visual experiences in TouchDesigner. This starter kit provides documentation, examples, and troubleshooting guidance to help beginners understand the workflow.
 
-StageHand explores how voice commands and MCP tools can be used to control visual experiences in TouchDesigner.
+## Why This Project?
 
-This companion project aims to make the setup easier for beginners through clear documentation, example commands, and troubleshooting guidance.
+Connecting voice input, tool interfaces, and visual software can be challenging for beginners. This project aims to make that process easier to understand through clear explanations and practical examples.
 
-## Goals
+## How It Works
 
-- Explain the basic StageHand architecture.
-- Document the setup process for a local MCP server.
-- Provide examples of voice commands and visual controls.
-- Help beginners understand and troubleshoot common setup issues.
-- Encourage learning, experimentation, and open-source collaboration.
+The workflow has three main components:
 
-## Project Structure
+1. **Voice Client** — captures speech and converts it into text.
+2. **MCP Server** — exposes tools that the client can invoke.
+3. **TouchDesigner** — responds to supported controls and updates the visual output.
+
+### Architecture
 
 ```text
-stagehand-starter-kit/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── docs/
-│   ├── setup.md
-│   └── troubleshooting.md
-└── examples/
-    ├── voice_commands.md
-    └── mcp_workflows.md
+       Spoken Command
+              |
+              v
+      +----------------+
+      |  Voice Client  |
+      | Speech to Text |
+      +----------------+
+              |
+              v
+      +----------------+
+      |   MCP Server   |
+      | Available Tools|
+      +----------------+
+              |
+              v
+      +----------------+
+      | TouchDesigner  |
+      | Visual Output  |
+      +----------------+
 ```
 
-## Example Voice Commands
+## Example Use Cases
 
-The following are examples of the kinds of commands a voice-controlled visual system might support. Actual support depends on the connected StageHand implementation.
+Depending on the connected implementation, voice commands may be used to:
 
-- Check the current status.
-- Change the visual look.
-- Adjust the intensity.
-- Enable or disable glow.
-- Trigger a visual moment.
-- Restore the previous look.
+- Check the current visual status.
+- Switch between visual presets.
+- Adjust visual intensity.
+- Control glow settings.
+- Trigger predefined visual moments.
+- Restore a previous visual configuration.
+
+See [`examples/voice_commands.md`](examples/voice_commands.md) for command examples.
+
 
 ## Getting Started
 
-This repository is intended as a learning resource. Detailed setup instructions and tested examples will be added as the project develops.
+1. Review the prerequisites in [`docs/setup.md`](setup.md).
+2. Follow the setup instructions for your own environment.
+3. Start the required local services.
+4. Try a supported voice command.
+5. Consult [`docs/troubleshooting.md`](docs/troubleshooting.md) if something does not work.
 
-Before connecting tools, make sure TouchDesigner and the relevant local services are installed and configured.
+This repository is a companion learning resource. Refer to the primary [StageHand project](https://github.com/yogithasri07/stagehand) for the main implementation.
 
-## Safety and Privacy
+## Who Is This For?
 
-- Do not commit API keys, passwords, tokens, or other secrets.
-- Review files before publishing them.
-- Test commands before using them in a live visual environment.
-- Follow the licences and terms of the software you use.
+- Beginners exploring TouchDesigner.
+- Developers learning about MCP integrations.
+- Creators interested in voice-controlled visual experiences.
+- Contributors who want to improve beginner-friendly technical documentation.
 
 ## Contributing
 
-Contributions, documentation improvements, bug reports, and beginner-friendly examples are welcome.
+Documentation improvements, new examples, and troubleshooting tips are welcome.
 
-See `CONTRIBUTING.md` for contribution guidelines.
+Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before contributing.
+
+## Security and Privacy
+
+- Never commit passwords, access tokens, or API keys.
+- Review files before publishing them.
+- Check the licensing requirements of external dependencies.
+- Verify commands before using them in a live visual environment.
 
 ## Licence
 
-This project is intended to use the MIT License. See the `LICENSE` file for details.
+This project uses the MIT License. See [`LICENSE`](LICENSE) for details.
