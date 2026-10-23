@@ -1,0 +1,1 @@
+# stagehand-starter-kit
